@@ -19,8 +19,8 @@ export default function (caller, opts) {
 	return {
 		flush: batch,
 
-		push: function () {
-			tmp = queue.push(arguments);
+		push: function (val) {
+			tmp = queue.push(val);
 			if (tmp >= max) batch();
 			return tmp;
 		},
