@@ -1,6 +1,6 @@
 {
   "name": "saturated",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repository": "lukeed/saturated",
   "description": "A tiny (203B) utility to enqueue items for batch processing and/or satisfying rate limits",
   "unpkg": "dist/saturated.min.js",
