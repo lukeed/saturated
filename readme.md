@@ -1,4 +1,4 @@
-# saturated [![codecov](https://badgen.now.sh/codecov/c/github/lukeed/saturated)](https://codecov.io/gh/lukeed/saturated)
+# saturated [![build status](https://badgen.now.sh/github/status/lukeed/saturated)](https://github.com/lukeed/saturated/actions) [![codecov](https://badgen.now.sh/codecov/c/github/lukeed/saturated)](https://codecov.io/gh/lukeed/saturated)
 
 > A tiny (203B) utility to enqueue items for batch processing and/or satisfying rate limits.
 
