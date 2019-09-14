@@ -2,7 +2,7 @@
   "name": "saturated",
   "version": "0.0.2",
   "repository": "lukeed/saturated",
-  "description": "WIP",
+  "description": "A tiny (203B) utility to enqueue items for batch processing and/or satisfying rate limits",
   "unpkg": "dist/saturated.min.js",
   "module": "dist/saturated.mjs",
   "main": "dist/saturated.js",
@@ -31,5 +31,11 @@
     "tap-spec": "5.0.0",
     "tape": "4.11.0"
   },
-  "keywords": []
+  "keywords": [
+    "rate",
+    "queue",
+    "batching",
+    "rate-limit",
+    "throttle"
+  ]
 }
