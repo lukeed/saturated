@@ -4,7 +4,7 @@
 
 Build a queue for your function – ideal for communicating with APIs that prefer batch/bulk processing or services that enforce rate limiting.
 
-With `saturated` you provide a `handler` which will only be called every N items or after every X milliseconds... whichever comes first! This then allows you to `push()` your payload(s) into the queue, waiting for the next tick.
+With `saturated` you provide a `handler` which will only be called every N items or after every X milliseconds... whichever comes first! This then allows you to [`push()`](#isaturatedpushvalue) your payload(s) into the queue, waiting for the next tick.
 
 This module exposes three module definitions:
 
@@ -89,7 +89,7 @@ Type: `Function`<br>
 Required: `true`
 
 The function to invoke once a threshold has been met.<br>
-It will always receive an `Array` of whatever item(s) you previously [`push`]()ed.
+It will always receive an `Array` of whatever item(s) you previously [`push`](#isaturatedpushvalue)ed.
 
 > **Note:** You may be passed an empty Array!
 
@@ -140,7 +140,7 @@ Cancels the internal `setInterval` timer.
 Type: `Boolean`<br>
 Default: `false`
 
-When `true`, will also [flush()]() the queue so that remaining items will be passed to your `handler` function.
+When `true`, will also [`flush()`](#isaturatedflush) the queue so that remaining items will be passed to your `handler` function.
 
 
 ### ISaturated.flush()
