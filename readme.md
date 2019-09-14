@@ -1,6 +1,6 @@
 # saturated [![codecov](https://badgen.now.sh/codecov/c/github/lukeed/saturated)](https://codecov.io/gh/lukeed/saturated)
 
-> A tiny (205B) utility to enqueue items for batch processing and/or satisfying rate limits.
+> A tiny (203B) utility to enqueue items for batch processing and/or satisfying rate limits.
 
 Build a queue for your function – ideal for communicating with APIs that prefer batch/bulk processing or services that enforce rate limiting.
 
@@ -74,7 +74,7 @@ async function demo() {
 
 // Init demo
 demo().then(() => {
-  rated.reset(); // quit
+  rated.end(); // quit
 });
 ```
 
@@ -131,7 +131,7 @@ You may push any value into queue.
 > Pushing an Array will have your `handler` receive an Array of your Arrays.
 
 
-### ISaturated.reset(toFlush)
+### ISaturated.end(toFlush)
 Returns: `undefined`
 
 Cancels the internal `setInterval` timer.

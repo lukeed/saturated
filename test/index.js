@@ -12,9 +12,9 @@ test('exports', t => {
 	t.is(typeof ctx.flush, 'function', '~> has "flush" function');
 	t.is(typeof ctx.push, 'function', '~> has "push" function');
 	t.is(typeof ctx.size, 'function', '~> has "size" function');
-	t.is(typeof ctx.reset, 'function', '~> has "reset" function');
+	t.is(typeof ctx.end, 'function', '~> has "end" function');
 
-	ctx.reset();
+	ctx.end();
 	t.end();
 });
 
@@ -28,7 +28,7 @@ test('$.push', t => {
 	const bar = ctx.push('world');
 	t.is(bar, 2, '~> returns the current queue length');
 
-	ctx.reset();
+	ctx.end();
 	t.end();
 });
 
@@ -44,7 +44,7 @@ test('$.size', t => {
 	const bar = ctx.size();
 	t.is(bar, 2, '~> returns the current queue length');
 
-	ctx.reset();
+	ctx.end();
 	t.end();
 });
 
@@ -67,11 +67,11 @@ test('$.flush', t => {
 	ctx.flush();
 	t.is(ctx.size(), 0, '(after) has 0 items');
 
-	ctx.reset();
+	ctx.end();
 });
 
 
-test('$.reset', t => {
+test('$.end', t => {
 	t.plan(2);
 
 	const ctx = rated(arr => {
@@ -84,12 +84,12 @@ test('$.reset', t => {
 	ctx.push('world');
 
 	t.is(ctx.size(), 2, '(before) has 2 items');
-	ctx.reset();
+	ctx.end();
 	t.is(ctx.size(), 2, '(after) has 2 items');
 });
 
 
-test('$.reset(true)', t => {
+test('$.end(true)', t => {
 	t.plan(5);
 
 	const ctx = rated(arr => {
@@ -104,7 +104,7 @@ test('$.reset(true)', t => {
 	ctx.push('world');
 
 	t.is(ctx.size(), 2, '(before) has 2 items');
-	ctx.reset(true);
+	ctx.end(true);
 	t.is(ctx.size(), 0, '(after) has 0 items');
 });
 
@@ -123,7 +123,7 @@ test('opts.max', t => {
 
 	Array.from({ length:10 }, obj.push);
 
-	obj.reset();
+	obj.end();
 	t.end();
 });
 
@@ -150,5 +150,5 @@ test('opts.interval', async t => {
 	await sleep(5e3);
 	t.is(ctx.size(), 0, '(after) has 0 items');
 
-	ctx.reset();
+	ctx.end();
 });

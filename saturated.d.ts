@@ -9,7 +9,7 @@ export type ISubscriber<T = any> = (queue: T[]) => any;
 export interface ISaturated<T = any> {
 	push: IPublisher<T>;
 	flush: () => void;
-	reset: (toFlush?: boolean) => void;
+	end: (toFlush?: boolean) => void;
 	size: () => number;
 }
 

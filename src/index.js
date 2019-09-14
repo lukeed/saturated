@@ -29,7 +29,7 @@ export default function (caller, opts) {
 			return queue.length;
 		},
 
-		reset: function (toFlush) {
+		end: function (toFlush) {
 			if (toFlush) batch();
 			clearInterval(timer);
 		}
